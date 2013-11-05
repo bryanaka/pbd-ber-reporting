@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131105010650) do
+ActiveRecord::Schema.define(version: 20131105225638) do
+
+  create_table "publications", force: true do |t|
+    t.string   "title"
+    t.string   "journal_name"
+    t.string   "journal_url"
+    t.string   "pages"
+    t.integer  "volume"
+    t.integer  "issue"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
