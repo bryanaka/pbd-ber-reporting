@@ -1,0 +1,50 @@
+<%= form_for(@press_release, :html => { :class => "form-horizontal" }) do |f| %>
+  <% if @press_release.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(@press_release.errors.count, "error") %> prohibited this press_release from being saved:</h4>
+
+      <ul>
+      <% @press_release.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :media_type, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :media_type, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :media_name, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :media_name, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :url, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :url, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :published_at, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.datetime_select :published_at, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :abstract, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_area :abstract, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

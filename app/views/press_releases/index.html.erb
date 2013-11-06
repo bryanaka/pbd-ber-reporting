@@ -1,0 +1,37 @@
+<div class="page-header">
+  <%= link_to new_press_release_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Press release
+  <% end %>
+  <h1>Listing press_releases</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Media type</th>
+            <th>Media name</th>
+            <th>Url</th>
+            <th>Published at</th>
+            <th>Abstract</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @press_releases) do |press_release| %>
+            <td><%= press_release.media_type %></td>
+            <td><%= press_release.media_name %></td>
+            <td><%= press_release.url %></td>
+            <td><%= press_release.published_at %></td>
+            <td><%= press_release.abstract %></td>
+            <td><%= link_to 'Show', press_release %></td>
+        <td><%= link_to 'Edit', edit_press_release_path(press_release) %></td>
+        <td><%= link_to 'Destroy', press_release, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,4 +1,4 @@
-class ResourceSection < ActiveRecord::Migration
+class CreateResourceSection < ActiveRecord::Migration
   def change
   	create_table :resource_section do |t|
 

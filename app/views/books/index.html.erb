@@ -1,0 +1,43 @@
+<div class="page-header">
+  <%= link_to new_book_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Book
+  <% end %>
+  <h1>Listing books</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Title</th>
+            <th>Publisher</th>
+            <th>Editor info</th>
+            <th>Edition</th>
+            <th>Isbn</th>
+            <th>Doi</th>
+            <th>Abstract</th>
+            <th>Published at</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @books) do |book| %>
+            <td><%= book.title %></td>
+            <td><%= book.publisher %></td>
+            <td><%= book.editor_info %></td>
+            <td><%= book.edition %></td>
+            <td><%= book.isbn %></td>
+            <td><%= book.doi %></td>
+            <td><%= book.abstract %></td>
+            <td><%= book.published_at %></td>
+            <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

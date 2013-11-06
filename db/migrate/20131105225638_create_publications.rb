@@ -9,6 +9,9 @@ class CreatePublications < ActiveRecord::Migration
       t.integer  :volume
       t.integer  :issue
       t.datetime :published_at
+      t.string   :status
+      t.string   :doi
+      t.text     :abstract
 
       t.timestamps
     end

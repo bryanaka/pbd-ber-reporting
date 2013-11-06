@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131105233402) do
+ActiveRecord::Schema.define(version: 20131106010531) do
+
+  create_table "books", force: true do |t|
+    t.string   "title"
+    t.string   "publisher"
+    t.string   "editor_info"
+    t.string   "edition"
+    t.string   "isbn"
+    t.string   "doi"
+    t.text     "abstract"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "press_releases", force: true do |t|
+    t.string   "media_type"
+    t.string   "media_name"
+    t.string   "url"
+    t.datetime "published_at"
+    t.text     "abstract"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "publications", force: true do |t|
     t.string   "title"
@@ -26,6 +49,19 @@ ActiveRecord::Schema.define(version: 20131105233402) do
     t.string   "status"
     t.string   "doi"
     t.text     "abstract"
+  end
+
+  create_table "research_groups", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "resource_section", force: true do |t|
+    t.string  "type"
+    t.integer "start"
+    t.integer "end"
+    t.integer "book_id"
   end
 
   create_table "scientists", force: true do |t|
