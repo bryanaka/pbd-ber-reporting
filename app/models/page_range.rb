@@ -1,0 +1,2 @@
+class PageRange < ResourceSection
+end

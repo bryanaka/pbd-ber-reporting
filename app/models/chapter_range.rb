@@ -1,0 +1,2 @@
+class ChapterRange < ResourceSection
+end

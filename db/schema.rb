@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131105225638) do
+ActiveRecord::Schema.define(version: 20131105233402) do
 
   create_table "publications", force: true do |t|
     t.string   "title"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 20131105225638) do
     t.integer  "volume"
     t.integer  "issue"
     t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+    t.string   "doi"
+    t.text     "abstract"
+  end
+
+  create_table "scientists", force: true do |t|
+    t.string   "prefix"
+    t.string   "suffix"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
